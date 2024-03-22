@@ -1,0 +1,35 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Watermark Remover</title>
+</head>
+
+<body>
+    <h1>Upload Image</h1>
+    <form id="uploadForm" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" id="fileInput">
+        <button type="submit">Upload</button>
+    </form>
+    <br>
+    <div id="previewContainer" style="display:none;">
+        <h2>Uploaded Image Preview</h2>
+        <img id="previewImage" src="#" alt="Uploaded Image" style="max-width: 500px; max-height: 500px;">
+    </div>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function (event) {
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('previewImage').src = e.target.result;
+                document.getElementById('previewContainer').style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        });
+    </script>
+</body>
+
+</html>

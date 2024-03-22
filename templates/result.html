@@ -1,0 +1,20 @@
+<!-- templates/result.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Watermark Remover - Result</title>
+</head>
+
+<body>
+    <h1>Uploaded Image</h1>
+    <h2>Original Image:</h2>
+    <img src="{{ url_for('uploaded_file', filename=original_image) }}" alt="Original Image">
+
+    <h2>Processed Image:</h2>
+    <img src="{{ url_for('uploaded_file', filename=processed_image) }}" alt="Processed Image">
+
+</body>
+
+</html>
